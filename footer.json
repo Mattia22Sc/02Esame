@@ -1,0 +1,5 @@
+[
+    { "title": "facebook", "link": "https://www.facebook.com/?locale=it_IT", "src":"img/icons8-facebook-50.png" },
+    { "title": "instagram", "link": "https://www.instagram.com/","src":"img/icons8-instagram-50.png" },
+    { "title": "x", "link": "https://x.com/","src":"img/icons8-twitter-50.png" }
+]

@@ -1,0 +1,6 @@
+[
+    { "title": "Home", "link": "index.php" },
+    { "title": "Chi siamo", "link": "chisiamo.php" },
+    { "title": "Contatti", "link": "contatti.php" },
+    { "title": "Lavori", "link": "lavori.php" }
+]

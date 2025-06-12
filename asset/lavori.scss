@@ -1,0 +1,54 @@
+// IMPORTAZIONI CSS DA VARIABILI.SCSS
+@import 'variabili';
+
+//CSS PAGINA LAVORI.PHP
+.works{
+    margin: 0px 10px 40px 10px;
+    background-color: $bg_grey;
+    border-top: 2px solid $bg_hr;
+    border-bottom: 2px solid $bg_hr;
+}
+
+.title_works{
+    text-align: center;
+}
+
+.card_works{
+    display: flex;
+    justify-content: space-around;
+        @media (max-width: $lg) {
+     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+    @media (max-width: $sm) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.work{
+    margin-bottom: 15px;
+    margin-right: 5px;
+    text-align: center;
+    align-content: center;
+    background-color: $bg_active;
+}
+
+.work a{
+    text-decoration: none;
+}
+
+.work h2{
+    color: $bg_hr;
+    font-size: $size_p;
+    font-family: $font;
+      @media (max-width: $lg) {
+    font-size: $size_p_lg;
+  }
+    @media (max-width: $sm) {
+    font-size: $size_p_sm;
+  }
+}
+

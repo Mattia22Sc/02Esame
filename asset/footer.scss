@@ -1,0 +1,78 @@
+// IMPORTAZIONI CSS DA VARIABILI.SCSS
+@import 'variabili';
+
+// CSS DELLA PAGINA FOOTER.PHP
+.footer{
+    background-color: $bg_grey;
+    border-top: 2px solid $bg_hr;
+    border-bottom: 2px solid $bg_hr;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    text-align: center;
+}
+
+.footer img{
+    width: 100px;
+    height: 100px;
+      @media (max-width: $lg) {
+     width: 80px;
+    height: 80px;
+  }
+    @media (max-width: $sm) {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+.footer a{
+    text-decoration: none;
+}
+
+.footer p{
+    font-family: $font;
+    font-size: $size_p;
+    color: $bg_hr;
+    @media (max-width: $lg) {
+    font-size: $size_p_lg;
+  }
+    @media (max-width: $sm) {
+    font-size: $size_p_sm;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+.footer ul{
+    list-style: none;
+    display: flex;
+    background: $bg_grey;
+    margin-right: 15px;
+    padding: 0;
+      @media (max-width: $lg) {
+    margin-right: 10px;
+  }
+    @media (max-width: $sm) {
+    margin-right: 5px;
+  }
+    
+}
+
+#icons{
+    width: 70px;
+    height: 70px;
+    margin-right: 15px;
+    @media (max-width: $lg) {
+     width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+    @media (max-width: $sm) {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+  }
+}
+
+

@@ -1,0 +1,106 @@
+// IMPORTAZIONI CSS DA VARIABILI.SCSS
+@import 'variabili';
+
+ //CSS DELLA PAGINA NAVBAR.PHP
+body{
+    margin: 0px;
+}
+
+hr{
+    height: 1px;
+    background-color: $bg_hr;
+}
+
+.navbar{
+    background-color: $bg_grey;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar-toggler {
+  display: none;
+  font-size: 45px;
+  background: none;
+  border: none;
+  color: $bg_hr;
+  cursor: pointer;
+  @media (max-width: $sm) {
+    display: block;
+  }
+}
+
+.navbar-toggler:active {
+  background-color: $bg_hover;
+}
+
+.navbar img{
+    width: 130px;
+    height: 130px;
+       @media (max-width: $lg) {
+    width: 100px;
+    height: 100px;
+  }
+    @media (max-width: $sm) {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    background: $bg_grey;
+    margin-right: 15px;
+    @media (max-width: $lg) {
+      margin-right: 10px;
+  }
+   @media (max-width: $sm) {
+     @media (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+  }
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    display: block;
+    padding: 10px;
+    color: $bg_hr;
+    text-decoration: none;
+    font-size: $size_a;
+    font-family: $font;
+    @media (max-width: $lg) {
+      padding: 5px;
+      font-size: $size_a_lg;
+  }
+    
+}
+
+.navbar a:hover {
+    background: $bg_hover;
+}
+
+.navbar .active a {
+    background: $bg_active;
+}
+
+.messaggio{
+    width: 100%;
+    background-color: $bg_grey;
+    font-family: $font;
+    font-size: $size_p;
+    text-align: center;
+       @media (max-width: $lg) {
+    font-size: $size_p_lg;
+  }
+    @media (max-width: $sm) {
+    font-size: $size_p_sm;
+  }
+}
