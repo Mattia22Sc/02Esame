@@ -1,6 +1,7 @@
 <?php
+include "utility.php";
+use MieClassi\Utility;
 // IN QUESTE FUNZIONI VENGONO CREATI DEGLI ARRAY ASSOCIATIVI IN BASE AL FILE JSON RICHIAMATO
-    include "navbar.php";
     $lavorihtml= json_decode(file_get_contents("lavorihtml.json"), true);
     $lavoricss= json_decode(file_get_contents("lavoricss.json"), true);
     $lavoriphp= json_decode(file_get_contents("lavoriphp.json"), true);
@@ -15,17 +16,20 @@
     <link rel="stylesheet" href="css/lavorimin.css">
 </head>
 <body>
+    <nav>
+        <?php Utility::printNavbar(); ?>
+    </nav>
     <div class="works">
         <div class="title_works">
             <h1>I MIEI LAVORI IN HTML</h1>
         </div> 
         <div class="card_works">
             
-            //*CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO */
+            <!--CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO-->
             <?php for ($i = 0; $i < count($lavorihtml); $i++): ?>
             <?php $lavoro = $lavorihtml[$i]?>
             <div class="work">
-                <a href="lavoro.php?categoria=html&id=<?php echo $i ?>">
+                <a title="<?php echo $lavoro['title']; ?>" href="lavoro.php?categoria=html&id=<?php echo $i ?>">
                     <h2><?php echo $lavoro['title']; ?></h2>
                     <img src="<?php echo $lavoro['src'] ?>" alt="">
                 </a>    
@@ -38,11 +42,11 @@
             <h1>I MIEI LAVORI IN CSS</h1>
         </div> 
         <div class="card_works">
-            //*CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO */
+            <!--CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO -->
             <?php for ($i = 0; $i < count($lavoricss); $i++): ?>
             <?php $lavoro = $lavoricss[$i]?>
             <div class="work">
-                <a href="lavoro.php?categoria=css&id=<?php echo $i ?>">
+                <a title="<?php echo $lavoro['title']; ?>" href="lavoro.php?categoria=css&id=<?php echo $i ?>">
                     <h2><?php echo $lavoro['title']; ?></h2>
                     <img src="<?php echo $lavoro['src'] ?>" alt="">
                 </a>    
@@ -55,11 +59,11 @@
             <h1>I MIEI LAVORI IN PHP</h1>
         </div> 
         <div class="card_works">
-            //*CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO */
+            <!--CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO -->
             <?php for ($i = 0; $i < count($lavoriphp); $i++): ?>
             <?php $lavoro = $lavoriphp[$i]?>
             <div class="work">
-                <a href="lavoro.php?categoria=php&id=<?php echo $i ?>">
+                <a title="<?php echo $lavoro['title']; ?>" href="lavoro.php?categoria=php&id=<?php echo $i ?>">
                     <h2><?php echo $lavoro['title']; ?></h2>
                     <img src="<?php echo $lavoro['src'] ?>" alt="">
                 </a>
@@ -72,11 +76,11 @@
             <h1>I MIEI LAVORI IN JAVASCRIPT</h1>
         </div> 
         <div class="card_works">
-            //*CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO */
+            <!--CICLO FOR CHE RICHIAMA DAI VARI FILE JSON I LAVORI E STAMPA IL RISULTATO NELL'URL DOVE VIENE SPECIFICATO LA CATEGORIA E IL TITOLO, VIENE APERTA LA PAGINA DEL SINGOLO LAVORO-->
             <?php for ($i = 0; $i < count($lavoriscript); $i++): ?>
             <?php $lavoro = $lavoriscript[$i]?>
             <div class="work">
-                <a href="lavoro.php?categoria=javascript&id=<?php echo $i ?>">
+                <a title="<?php echo $lavoro['title']; ?>" href="lavoro.php?categoria=javascript&id=<?php echo $i ?>">
                     <h2><?php echo $lavoro['title']; ?></h2>
                     <img src="<?php echo $lavoro['src']?>" alt="">
                 </a>
@@ -84,8 +88,8 @@
             <?php endfor?>
         </div>
     </div>
-    <?php
-    include "footer.php";
-    ?>
+    <footer>
+         <?php Utility::printFooter(); ?>
+    </footer>
 </body>
 </html>

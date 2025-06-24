@@ -1,5 +1,6 @@
 <?php
-include "navbar.php";
+   include "utility.php";
+    use MieClassi\Utility;
 
 // Prende i parametri dalla URL
 $categoria = $_GET['categoria'] ?? null;
@@ -49,23 +50,27 @@ $lavoro = $lavori[$id];
     <link rel="stylesheet" href="css/homemin.css">
 </head>
 <body>
+    <nav>
+        <?php Utility::printNavbar(); ?>
+    </nav>
     <div class="card">
         <div class="card_img">
            <img src="<?php echo htmlspecialchars($lavoro['src']); ?>" alt="Immagine di <?php echo htmlspecialchars($lavoro['title']); ?>">     
         </div>
         <div class="descrption">
-            //*QUA VIENE FATTA UN INTERROGAZIONE SE è PRESENTE NEL SINGOLO LAVORO LA DESCRIZIONE, SE è PRESENTE VIENE RIPORTATA ALTRIMENTI IL MESSAGGIO SARA'  DESCRIZIONE NON disponibile */
+            <!--QUA VIENE FATTA UN INTERROGAZIONE SE è PRESENTE NEL SINGOLO LAVORO LA DESCRIZIONE, SE è PRESENTE VIENE RIPORTATA ALTRIMENTI IL MESSAGGIO SARA'  DESCRIZIONE NON disponibile-->
             <h1><?php echo htmlspecialchars($lavoro['title']); ?></h1>
             <p><?php echo htmlspecialchars($lavoro['descrizione'] ?? 'Descrizione non disponibile'); ?></p>
             <p><?php echo htmlspecialchars($lavoro['descrizione'] ?? 'Descrizione non disponibile'); ?></p>
             <p><?php echo htmlspecialchars($lavoro['descrizione'] ?? 'Descrizione non disponibile'); ?></p>
             <p><?php echo htmlspecialchars($lavoro['descrizione'] ?? 'Descrizione non disponibile'); ?></p>
             <p><?php echo htmlspecialchars($lavoro['descrizione'] ?? 'Descrizione non disponibile'); ?></p>
-            //* QUESTO BOTTONE CI RIPORTA ALLA LISTA DEI LAVORI
-            <button class="button"><a href="lavori.php">← Torna ai lavori</a> </button>
+            <!--QUESTO BOTTONE CI RIPORTA ALLA LISTA DEI LAVORI-->
+            <button class="button"><a title="Lavori" href="lavori.php">← Torna ai lavori</a> </button>
         </div>
     </div> 
-     
-<?php include "footer.php"; ?>
+    <footer>
+         <?php Utility::printFooter(); ?>
+    </footer>
 </body>
 </html>

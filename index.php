@@ -1,5 +1,6 @@
 <?php
-    include "navbar.php";
+    include "utility.php";
+    use MieClassi\Utility;
 //legge il contenuto del file json, convertendo la stringa in un array
    $lavori = json_decode(file_get_contents("lavori.json"), true);
 ?>
@@ -13,6 +14,9 @@
     <link rel="stylesheet" href="css/homemin.css">   
 </head>
 <body>
+    <nav>
+          <?php Utility::printNavbar(); ?>
+    </nav>
     <div class="card">
         <div class="card_img">
             <img src="./img/ai-generated-8918637_640.jpg" alt="">       
@@ -29,11 +33,11 @@
             <h1>I MIEI LAVORI</h1>
         </div> 
         <div class="card_works">
-            //*CICLO FOR CHE RICHIAMA DAL FILE LAVORI.JSON I LAVORI E STAMPA IL RISULTATO NEL DIV WORK */
+            <!--CICLO FOR CHE RICHIAMA DAL FILE LAVORI.JSON I LAVORI E STAMPA IL RISULTATO NEL DIV WORK -->
             <?php for ($i = 0; $i < count($lavori); $i++): ?>
             <?php $lavoro = $lavori[$i]?>
             <div class="work">
-                <a href="<?php echo $lavoro['href']?>">
+                <a title=" <?php echo $lavoro['title'] ?>" href="<?php echo $lavoro['href']?>">
                     <h2>
                         <?php echo $lavoro['title'] ?>
                     </h2>
@@ -43,9 +47,10 @@
             </div>
             <?php endfor ?>
         </div>
+        <footer></footer>
     </div>
-    <?php
-    include "footer.php"
-    ?>
+    <footer>
+         <?php Utility::printFooter(); ?>
+    </footer>
 </body>
 </html>

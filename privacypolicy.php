@@ -1,5 +1,6 @@
 <?php
-    include "navbar.php";
+    include "utility.php";
+    use MieClassi\Utility;
 //legge il contenuto del file json, convertendo la stringa in un array
    $lavori = json_decode(file_get_contents("lavori.json"), true);
    $current = basename($_SERVER['PHP_SELF']);
@@ -14,6 +15,9 @@
     <link rel="stylesheet" href="css/homemin.css"> 
 </head>
 <body>
+    <nav>
+        <?php Utility::printNavbar(); ?>
+    </nav>
     <div class="works">
         <h3>Privacy Policy</h3>
         <p>This privacy policy covers php.net and its associated mirrors.</p>
@@ -36,9 +40,8 @@
             We also use self-hosted analytics service to improve popular sections of the documentation, and never share user data with third parties. You may deactivate or restrict the transmission of cookies by changing the settings of your web browser. Cookies that are already stored may be deleted at any time.
         </p>
     </div>
-
-    <?php
-        include "footer.php";
-    ?>    
+    <footer>
+         <?php Utility::printFooter(); ?>
+    </footer>
 </body>
 </html>

@@ -1,5 +1,6 @@
 <?php
-    include "navbar.php";
+   include "utility.php";
+    use MieClassi\Utility;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +11,10 @@
     <link rel="stylesheet" href="css/homemin.css">  
 </head>
 <body>
+    <nav>
+        <?php Utility::printNavbar(); ?>
+    </nav>
+    
     <div class="card">
         <div class="card_img">
             <img src="./img/ai-generated-8918637_640.jpg" alt="">       
@@ -32,8 +37,8 @@
             <p>La mia sede operativa si trova in centro a San Cataldo, ma lavoro con attività e clienti sparsi per tutta Italia. Contattami per una consulenza e per definire una proposta personalizzata per le tue necessità.</p>
         </div>
     </div>  
-     <?php
-    include "footer.php";
-    ?>  
+    <footer>
+         <?php Utility::printFooter(); ?>
+    </footer>
 </body>
 </html>
